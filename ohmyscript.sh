@@ -75,13 +75,13 @@ SGCOLOR="223"
 if [[ $BGCOLOR == "#f5bc39" ]];then
   BGCOLOR="223";
   SGCOLOR="220";
-elif [[ $BGCOLOR == "#07cdd1" ]];then
+elif [[ $BGCOLOR == "#02cdd1" ]];then
   BGCOLOR="195";
   SGCOLOR="51";
-elif [[ $BGCOLOR == "#b61182" ]];then
+elif [[ $BGCOLOR == "#b61282" ]];then
   BGCOLOR="225";
   SGCOLOR="200";
-elif [[ $BGCOLOR == "#225a17" ]];then
+elif [[ $BGCOLOR == "#235a16" ]];then
   BGCOLOR="2";
   SGCOLOR="34";
 fi
