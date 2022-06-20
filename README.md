@@ -1,11 +1,10 @@
 # ohmyscript
 
-#SCREENSHOT
-  - <img width="830" alt="Screen Shot 2022-06-20 at 2 12 56 AM" src="https://user-images.githubusercontent.com/55538999/174508864-54e48c1d-4f34-4405-ad47-e4a6c246b717.png">
-  - ```chiblassa -n "username"``` or ```chiblassa e1```
-  - <img width="711" alt="Screen Shot 2022-06-20 at 2 14 04 AM" src="https://user-images.githubusercontent.com/55538999/174508989-7e1988d5-4075-4d5e-b620-db45d9769a2b.png">
-
-#HOW TO USE?
+<h1>SCREENSHOT</h1>
+  <img width="830" alt="Screen Shot 2022-06-20 at 2 12 56 AM" src="https://user-images.githubusercontent.com/55538999/174508864-54e48c1d-4f34-4405-ad47-e4a6c246b717.png">
+  - ```chiblassa -n "username"``` or ```chiblassa e1``` or ```chiblassa e1 13 ( 13 = row id )```
+  <img width="711" alt="Screen Shot 2022-06-20 at 2 14 04 AM" src="https://user-images.githubusercontent.com/55538999/174508989-7e1988d5-4075-4d5e-b620-db45d9769a2b.png">
+<h1>HOW TO USE?</h1>
   - Go to : https://profile.intra.42.fr/ 🌐
   - Inspect or use Ctrl+Shift+C shortcut for Windows ⊞ and ⌘+⇧+C for Mac 
   - Go to 📋 Application > Storage > Cookies
