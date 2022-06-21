@@ -42,6 +42,8 @@ LOCATION=$(curl --silent "https://profile.intra.42.fr/users/$USER/locations_stat
   -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36' \
   --compressed)
 
+echo $LOCATION | grep "sign_in" | wc -l && exit 1;
+
 MYLOCATION=$(echo $LOCATION | grep '{' | tr ',' '\n' | tr '{' ' ' | tr '}' ' ' | grep "\-$MONTH\-")
 EXPRTOCALC=$(echo $MYLOCATION | tr ' ' '\n' | tr ':' ' ' | awk '{print $2}' | tr '"' ' ' | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ +/g')
 
