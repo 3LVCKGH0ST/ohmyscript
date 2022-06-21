@@ -6,25 +6,23 @@ MONTH=$(date +%m)
 echo <<EOF "$(tput setaf 28 214 121)
 
 
-    ███████████           ██████████████           ██████████████           ██████████████
-    ██       ██                       ██                       ██           ██          ██
-             ██                       ██                       ██           ██          ██
-             ██                       ██                       ██                       ██
-             ██                       ██                       ██                       ██
-             ██           ██████████████           ██████████████                       ██
-             ██                       ██                       ██                       ██
-             ██                       ██                       ██                       ██
-             ██                       ██                       ██                       ██
-             ██                       ██                       ██                       ██
-         ██████████       ██████████████           ██████████████                       ██ . MA
+    █████████       ██████████       ██████████        ███████████
+    ██     ██               ██               ██        ██       ██ 
+           ██               ██               ██        ██       ██
+      	   ██               ██               ██                 ██
+      	   ██       ██████████       ██████████                 ██
+      	   ██               ██               ██                 ██
+      	   ██               ██               ██                 ██
+      	   ██               ██               ██                 ██
+      	 ██████     ██████████       ██████████                 ██ . MA
     
     
-                                    $(tput setaf 7)<$(tput setaf 7) $(tput setaf 28 214 121)FUTURE:$(tput setaf 7) IS_LOADING />
+                        $(tput setaf 7)<$(tput setaf 7) $(tput setaf 28 214 121)FUTURE:$(tput setaf 7) IS_LOADING />
                                     
-                                    $(tput setaf 28 214 121)$USER@student.1337.ma$(tput setaf 7)
+                       $(tput setaf 28 214 121)$USER@student.1337.ma$(tput setaf 7)
 "
 EOF
-echo -n "                                  ";date;
+echo -e "                     $(date)\n";
 
 LOCATION=$(curl --silent "https://profile.intra.42.fr/users/$USER/locations_stats" \
   -H 'authority: profile.intra.42.fr' \
@@ -88,7 +86,7 @@ fi
 
 MYLEVEL=$(cat out | grep "level" | tail -n1 | tr ">" "\n" | tr "<" "\n" | grep level);
 PERCENTAGE=$(echo $MYLEVEL | awk '{print substr($NF, 1, length($NF)-1)}');
-LEVELCHART=$(python -c "mylevel = '-'.join('' for i in range(50));index = 26;mylevel = mylevel[:index] + '$MYLEVEL' + mylevel[index:];index = $PERCENTAGE*50/100;mylevel = mylevel[:index] + '$(tput setab $BGCOLOR)' + mylevel[index:];print (mylevel)");
+LEVELCHART=$(python -c "mylevel = '-'.join('' for i in range(59));index = 26;mylevel = mylevel[:index] + '$MYLEVEL' + mylevel[index:];index = $PERCENTAGE*71/100;mylevel = mylevel[:index] + '$(tput setab $BGCOLOR)' + mylevel[index:];print (mylevel)");
 
 echo -e "$(tput setab $SGCOLOR)$(tput setaf 0)$LEVELCHART$(tput sgr0)\n" | tr '-' ' ';
 

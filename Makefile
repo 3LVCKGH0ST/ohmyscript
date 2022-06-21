@@ -3,5 +3,3 @@ all : update
 
 update :
 	@git pull --quiet
-
-#add crontab; add fin kayn;  conigfile
