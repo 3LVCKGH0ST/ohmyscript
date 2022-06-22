@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOKEN=$(cat token | grep cookie)
+TOKEN=$((ls | grep -q "debug_token" && cat debug_token | grep cookie) || (cat mytokentoken | grep cookie))
 
 MONTH=$(date +%m)
 echo <<EOF "$(tput setaf 28 214 121)
@@ -24,7 +24,7 @@ echo <<EOF "$(tput setaf 28 214 121)
 EOF
 echo -e "                     $(date)\n";
 
-LOCATION=$(curl --silent "https://profile.intra.42.fr/users/$USER/locations_stats" \
+LOCATION=$(curl --max-time 3 --silent "https://profile.intra.42.fr/users/$USER/locations_stats" \
   -H 'authority: profile.intra.42.fr' \
   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
   -H 'accept-language: en-US,en;q=0.9' \
@@ -42,7 +42,10 @@ LOCATION=$(curl --silent "https://profile.intra.42.fr/users/$USER/locations_stat
   -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.115 Safari/537.36' \
   --compressed)
 
-echo $LOCATION | grep "sign_in" | wc -l && exit 1;
+if echo $LOCATION | grep -q "sign_in"; then
+  echo "You are not logged in. Please log in and try again."
+  exit 1
+fi
 
 MYLOCATION=$(echo $LOCATION | grep '{' | tr ',' '\n' | tr '{' ' ' | tr '}' ' ' | grep "\-$MONTH\-")
 EXPRTOCALC=$(echo $MYLOCATION | tr ' ' '\n' | tr ':' ' ' | awk '{print $2}' | tr '"' ' ' | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ +/g')
@@ -51,7 +54,7 @@ echo -n "My logtime : $(tput setaf 28 214 121)";echo $EXPRTOCALC | bc | tr '\n' 
 ";
 
 
-curl 'https://profile.intra.42.fr/' \
+curl --max-time 3 'https://profile.intra.42.fr/' \
 -H 'authority: profile.intra.42.fr' \
 -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
 -H 'accept-language: en-US,en;q=0.9' \
