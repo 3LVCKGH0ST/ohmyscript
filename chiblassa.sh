@@ -1,6 +1,7 @@
 #! /bin/bash
 
-TOKEN=$(cat $HOME/Desktop/ohmyscript/mytoken | grep cookie)
+TOKEN=$((ls | grep -q "debug_token" && cat $HOME/Desktop/ohmyscript/debug_token || $HOME/Desktop/ohmyscript/mytoken) | grep cookie)
+
 TOSEATCHNAME=""
 while getopts 'n:' OPTION; do
   case "$OPTION" in
