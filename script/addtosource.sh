@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SCRDIR="$PWD/script"
+SCRDIR="$PWD"
 
 cat ~/.zshrc | grep -q 'ohmyscript' && echo -n "" || echo "make -C $SCRDIR" >> ~/.zshrc 
 cat ~/.zshrc | grep -q 'chiblassa' && echo -n "" || echo -e "\nalias chiblassa=\"$SCRDIR/chiblassa.sh\"\n" >> ~/.zshrc;

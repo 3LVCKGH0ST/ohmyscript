@@ -95,5 +95,5 @@ LEVELCHART=$(python -c "mylevel = '-'.join('' for i in range(59));index = 26;myl
 
 echo -e "$(tput setab $SGCOLOR)$(tput setaf 0)$LEVELCHART$(tput sgr0)\n" | tr '-' ' ';
 
-cat out |  grep "project-item " | grep "<a" | tr '>' ' ' | awk '{print $NF}' > outfile;echo -n "$(tput setaf 1)BLACKHOLE : "; ./getblackholedays.sh;echo "
+cat out |  grep "project-item " | grep "<a" | tr '>' '\n' | grep -v "<a" | grep -v "</a" > outfile;echo -n "$(tput setaf 1)BLACKHOLE : "; ./getblackholedays.sh;echo "
 $(tput setaf 28 214 121)PROJECTS :$(tput setaf 7)"; cat outfile; rm -f outfile out;

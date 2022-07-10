@@ -1,5 +1,6 @@
-debug_token
-token
-TODO
-tests.sh
-mytoken
+script/debug_token
+script/token
+script/TODO
+script/tests.sh
+script/mytoken
+extension/node_modules
