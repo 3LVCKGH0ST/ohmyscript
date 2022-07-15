@@ -1,8 +1,8 @@
 #! /bin/bash
 
-SCRDIR="$PWD"
+SCRDIR="$PWD/script"
 
-TOKEN=$((ls | grep -q "debug_token" && cat $SCRDIR/debug_token || $SCRDIR/mytoken) | grep cookie)
+TOKEN=$((ls | grep -q "debug_token" && cat $SCRDIR/debug_token || cat $SCRDIR/mytoken) | grep cookie)
 
 TOSEATCHNAME=""
 while getopts 'n:' OPTION; do
