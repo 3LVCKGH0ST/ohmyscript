@@ -84,9 +84,9 @@ input::placeholder {
   height: 28px;
   width: 28px;
   bottom: 0px;
-  right: -38px;
+  right: -35px;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.35;
 }
 
 .hostname {
@@ -108,7 +108,7 @@ input::selection {
 	position: absolute;
 	top: 52.5%;
 	left: 50%;
-	width: 20px;
+	width: 15px;
 	animation: loading 1s linear infinite;
 	opacity: .5;
 }
