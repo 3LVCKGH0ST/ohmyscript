@@ -102,3 +102,22 @@ input::placeholder {
 input::selection {
   background: rgba(255, 255, 255, 0.25);
 }
+
+.loading{
+	display: none;
+	position: absolute;
+	top: 52.5%;
+	left: 50%;
+	width: 20px;
+	animation: loading 1s linear infinite;
+	opacity: .5;
+}
+
+@keyframes loading {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
