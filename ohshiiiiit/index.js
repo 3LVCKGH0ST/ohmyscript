@@ -31,13 +31,13 @@ const createWindow = () => {
     frame: false,
     width: 3200,
     height: 1800,
-    // simpleFullscreen: true,
-    // fullscreen: true,
-    // closable: false,
-    // focusable: true,
-    // alwaysOnTop: true,
-    // skipTaskbar: true,
-    // kiosk: true,
+    simpleFullscreen: true,
+    fullscreen: true,
+    closable: false,
+    focusable: true,
+    alwaysOnTop: true,
+    skipTaskbar: true,
+    kiosk: true,
   });
   win.maximize();
   // win.webContents.openDevTools();

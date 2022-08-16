@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SCRDIR="$PWD/script"
+SCRDIR="/Users/mbalagui/Desktop/ohmyscript/script"
 
 TOKEN=$((ls | grep -q "debug_token" && cat $SCRDIR/debug_token || cat $SCRDIR/mytoken) | grep cookie)
 
